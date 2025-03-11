@@ -1,13 +1,13 @@
-package com.crg.com.ar.enterprisews;
+package com.crg.enterprisews;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class EnterpriseProjectApplication {
+public class EnterprisewsApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(EnterpriseProjectApplication.class, args);
+		SpringApplication.run(EnterprisewsApplication.class, args);
 	}
 
 }

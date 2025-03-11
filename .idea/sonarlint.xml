@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SonarLintProjectSettings">
+    <option name="fileExclusions">
+      <list>
+        <option value="FILE:enterprise-project/src/main/java/com/crg/enterprisews/domain/Empresa.java" />
+      </list>
+    </option>
+  </component>
+</project>

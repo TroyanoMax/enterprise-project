@@ -1,10 +1,10 @@
-package com.crg.com.ar.enterprisews;
+package com.crg.enterprisews;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class EnterpriseProjectApplicationTests {
+class EnterprisewsApplicationTests {
 
 	@Test
 	void contextLoads() {

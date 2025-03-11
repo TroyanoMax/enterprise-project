@@ -1,4 +1,4 @@
-package com.crg.com.ar.enterprise_project;
+package com.crg.com.ar.enterprisews;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

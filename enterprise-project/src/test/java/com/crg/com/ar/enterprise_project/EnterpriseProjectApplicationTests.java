@@ -1,4 +1,4 @@
-package com.crg.com.ar.enterprise_project;
+package com.crg.com.ar.enterprisews;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

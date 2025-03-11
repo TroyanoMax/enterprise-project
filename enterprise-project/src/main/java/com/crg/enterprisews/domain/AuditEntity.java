@@ -21,43 +21,31 @@ import java.util.Date;
 @Setter
 public abstract class AuditEntity implements Serializable {
 
-    /**
-     * SerialVersion.
-     */
+    /** * SerialVersion. */
     @Serial
     private static final long serialVersionUID = 1L;
 
-    /**
-     * The creation date.
-     */
+    /** * The creation date. */
     @Column(name = "CREATED_DATE")
     @CreatedDate
     private Date createdDate;
 
-    /**
-     * The modification date.
-     */
+    /** * The modification date. */
     @Column(name = "MODIFIED_DATE")
     @LastModifiedDate
     private Date modifiedDate;
 
-    /**
-     * The creator of the record.
-     */
+    /** * The creator of the record. */
     @Column(name = "CREATED_BY")
     @CreatedBy
     private String createdBy;
 
-    /**
-     * The last person that modified the record.
-     */
+    /** * The last person that modified the record. */
     @Column(name = "MODIFIED_BY")
     @LastModifiedBy
     private String modifiedBy;
 
-    /**
-     * Flag that indicates if the record is active or not.
-     */
+    /** * Flag record is active or not. */
     @Column(name = "IS_ACTIVE")
     private boolean isActive;
 

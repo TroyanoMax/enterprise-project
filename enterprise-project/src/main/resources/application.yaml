@@ -1,3 +1,17 @@
 spring:
   application:
     name: enterprisews
+  datasource:
+    url: jdbc:h2:mem:ENTPS_DATA
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  h2:
+    console:
+      enabled: true
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+  flyway:
+    enabled: true

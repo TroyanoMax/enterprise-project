@@ -16,7 +16,7 @@ import java.time.LocalDate;
 @Getter
 @Setter
 @Builder
-@Table(name = "EMPRESA", schema = "ENTPS_DATA")
+@Table(name = "EMPRESAS", schema = "ENTPS_DATA")
 @NoArgsConstructor
 @AllArgsConstructor
 public class Empresa extends AuditEntity {

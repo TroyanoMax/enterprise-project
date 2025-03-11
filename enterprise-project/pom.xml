@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.crg.com.ar</groupId>
-	<artifactId>enterprise-project</artifactId>
+	<artifactId>enterprisews</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>enterprise-project</name>
+	<name>enterprisews</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>

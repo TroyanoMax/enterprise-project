@@ -44,11 +44,6 @@ public class TransferenciaController {
                     content = @Content(
                             mediaType = "application/json",
                             schema = @Schema(implementation = RuntimeException.class)
-                    )),
-            @ApiResponse(responseCode = "500", description = "Error inesperado.",
-                    content = @Content(
-                            mediaType = "application/json",
-                            schema = @Schema(implementation = HttpServerErrorException.InternalServerError.class)
                     ))
     })
     @GetMapping("/ultimo-mes")

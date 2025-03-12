@@ -106,7 +106,7 @@ public class EmpresaController {
         } catch (Exception e) {
             log.error("Error inesperado al adherir empresa.", e);
             return new ResponseEntity<>(
-                    new EmpresaResponse(null, "Error inesperado al adherir empresa."),
+                    new EmpresaResponse(null, "Error inesperado al adherir empresa: " + e.getMessage()),
                     HttpStatus.INTERNAL_SERVER_ERROR
             );
         }

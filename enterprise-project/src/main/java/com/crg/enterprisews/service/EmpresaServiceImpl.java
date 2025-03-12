@@ -57,7 +57,7 @@ public class EmpresaServiceImpl implements EmpresaService {
         Empresa empresa = modelMapper.map(empresaDTO, Empresa.class);
 
         var existingEmpresa = empresaRepository.findByCuitAndIsActive(empresa.getCuit(), true);
-        if (existingEmpresa != null) {
+        if (!existingEmpresa.isEmpty()) {
             throw new IllegalArgumentException("La empresa con CUIT " + empresa.getCuit() + " ya existe.");
         }
 

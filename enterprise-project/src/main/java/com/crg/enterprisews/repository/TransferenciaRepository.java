@@ -3,8 +3,6 @@ package com.crg.enterprisews.repository;
 import com.crg.enterprisews.domain.Transferencia;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 

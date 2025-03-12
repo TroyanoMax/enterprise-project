@@ -16,8 +16,14 @@ import java.util.List;
 @RequiredArgsConstructor
 public class EmpresaServiceImpl implements EmpresaService {
 
+    /**
+     * EmpresaRepository.
+     */
     private final EmpresaRepository empresaRepository;
 
+    /**
+     * ModelMapper.
+     */
     private final ModelMapper modelMapper;
 
     @Override
@@ -29,7 +35,6 @@ public class EmpresaServiceImpl implements EmpresaService {
 
     @Override
     public void adherirEmpresa(EmpresaDTO empresa) {
-
         Empresa em = modelMapper.map(empresa, Empresa.class);
         empresaRepository.save(em);
     }

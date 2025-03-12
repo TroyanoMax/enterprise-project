@@ -138,7 +138,10 @@ mvn test
 mvn spring-boot:run
 ```
 
-Acceder a **Swagger UI** en:
+Acceder a **Swagger UI** en: 
+en el caso que se solicite utilizar las credenciales:
+user: admin
+pass: admin
 
 ```
 http://localhost:8080/swagger-ui.html

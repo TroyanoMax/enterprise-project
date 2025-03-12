@@ -51,7 +51,7 @@ public class EmpresaController {
 
         var response = empresaService.obtenerEmpresasAdheridasUltimoMes();
 
-        if (response != null && !response.getItems().isEmpty()) {
+        if (!response.getItems().isEmpty()) {
             log.info("Empresas obtenidas: {}", response.getItems());
             return ResponseEntity.ok(response);
         } else {

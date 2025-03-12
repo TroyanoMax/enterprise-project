@@ -51,7 +51,7 @@ public class TransferenciaController {
         log.info("Obteniendo lista de transferencias en el último mes");
 
         var response = transferenciaService.obtenerTransferenciasUltimoMes();
-        if (response != null && !response.getItems().isEmpty()) {
+        if (!response.getItems().isEmpty()) {
             log.info("Transferencias Realziadas: {}", response.getItems());
             return ResponseEntity.ok(response);
         } else {

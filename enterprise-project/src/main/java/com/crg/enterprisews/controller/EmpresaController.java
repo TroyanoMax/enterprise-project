@@ -1,6 +1,5 @@
 package com.crg.enterprisews.controller;
 
-import com.crg.enterprisews.domain.Empresa;
 import com.crg.enterprisews.dto.EmpresaDTO;
 import com.crg.enterprisews.dto.EmpresaResponse;
 import com.crg.enterprisews.service.EmpresaService;
@@ -13,13 +12,11 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.HttpServerErrorException;
 
-import java.util.Collections;
 
 @RestController
 @RequestMapping("/empresas")

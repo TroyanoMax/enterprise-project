@@ -1,6 +1,6 @@
 package com.crg.enterprisews.dto;
 
-import com.crg.enterprisews.domain.Empresa;
+import com.crg.enterprisews.domain.Transferencia;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -15,11 +15,11 @@ import java.util.List;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @AllArgsConstructor
 @NoArgsConstructor
-public class EmpresaResponse {
+public class TransferenciaResponse {
 
-    /** * lista item empresas. */
+    /** * lista item transferencias. */
     @JsonProperty("items")
-    private List<Empresa> items;
+    private List<Transferencia> items;
 
     /** * messages. */
     @JsonProperty("message")

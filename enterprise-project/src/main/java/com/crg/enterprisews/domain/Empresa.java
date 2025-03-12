@@ -1,27 +1,30 @@
 package com.crg.enterprisews.domain;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.Builder;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 @Entity
 @Getter
 @Setter
 @Builder
-@Table(name = "EMPRESAS", schema = "ENTPS_DATA")
+@Table(
+        name = "EMPRESAS",
+        schema = "ENTPS_DATA",
+        uniqueConstraints = @UniqueConstraint(columnNames = "cuit")
+)
 @NoArgsConstructor
 @AllArgsConstructor
 public class Empresa extends AuditEntity {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
     private Long id;
 
@@ -32,5 +35,5 @@ public class Empresa extends AuditEntity {
     private String razonSocial;
 
     @Column(name = "FECHA_ADHESION")
-    private LocalDate fechaAdhesion;
+    private Date fechaAdhesion;
 }

@@ -18,7 +18,14 @@ import org.springframework.context.annotation.Configuration;
         ),
         tags = {
                 @Tag(name = "Nombre:", description = "enterprisews")
-        }
+        },
+        security = @SecurityRequirement(name = "basicAuth")
+)
+
+@SecurityScheme(
+        name = "basicAuth",
+        type = SecuritySchemeType.HTTP,
+        scheme = "basic"
 )
 
 public class OpenApiConfig {

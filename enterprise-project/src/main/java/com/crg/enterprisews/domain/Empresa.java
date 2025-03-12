@@ -1,11 +1,17 @@
 package com.crg.enterprisews.domain;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import jakarta.persistence.UniqueConstraint;
+import jakarta.persistence.Column;
+import jakarta.persistence.Id;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.Builder;
+import lombok.ToString;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
@@ -21,6 +27,7 @@ import java.util.Date;
 )
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString
 public class Empresa extends AuditEntity {
 
     @Id

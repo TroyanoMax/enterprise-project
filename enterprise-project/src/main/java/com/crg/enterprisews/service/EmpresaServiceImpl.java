@@ -2,6 +2,7 @@ package com.crg.enterprisews.service;
 
 import com.crg.enterprisews.domain.Empresa;
 import com.crg.enterprisews.dto.EmpresaDTO;
+import com.crg.enterprisews.dto.EmpresaResponse;
 import com.crg.enterprisews.repository.EmpresaRepository;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
@@ -9,8 +10,10 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.time.ZoneId;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -26,16 +29,44 @@ public class EmpresaServiceImpl implements EmpresaService {
      */
     private final ModelMapper modelMapper;
 
+    /**
+     * Listado de empresas adheridas el último mes.
+     * @return - Listado de empresas adheridas el último mes.
+     */
     @Override
-    public List<Empresa> obtenerEmpresasAdheridasUltimoMes() {
+    public EmpresaResponse obtenerEmpresasAdheridasUltimoMes() {
         LocalDate localDate = LocalDate.now().minusMonths(1);
         Date date = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
-        return empresaRepository.findByFechaAdhesionAfterAndIsActive(date, true);
+
+        return Optional.ofNullable(
+                empresaRepository.findByFechaAdhesionAfterAndIsActive(date, true)
+                )
+                .map(empresas -> {
+                    var empresaResponse = new EmpresaResponse();
+                    empresaResponse.setItems(empresas);
+                    return empresaResponse;
+                })
+                .orElseGet(() -> {
+                    var empresaResponse = new EmpresaResponse();
+                    empresaResponse.setItems(Collections.emptyList());
+                    return empresaResponse;
+                });
     }
 
     @Override
-    public void adherirEmpresa(EmpresaDTO empresa) {
-        Empresa em = modelMapper.map(empresa, Empresa.class);
-        empresaRepository.save(em);
+    public EmpresaResponse adherirEmpresa(EmpresaDTO empresaDTO) {
+        Empresa empresa = modelMapper.map(empresaDTO, Empresa.class);
+
+        var existingEmpresa = empresaRepository.findByCuitAndIsActive(empresa.getCuit(), true);
+        if (existingEmpresa != null) {
+            throw new IllegalArgumentException("La empresa con CUIT " + empresa.getCuit() + " ya existe.");
+        }
+
+        Empresa savedEmpresa = empresaRepository.save(empresa);
+
+        EmpresaResponse response = new EmpresaResponse();
+        response.setItems(Collections.singletonList(savedEmpresa));
+
+        return response;
     }
 }

@@ -8,4 +8,5 @@ import java.util.List;
 
 public interface EmpresaRepository extends JpaRepository<Empresa, String> {
     List<Empresa> findByFechaAdhesionAfterAndIsActive(Date fecha, Boolean isActive);
+    List<Empresa> findByCuitAndIsActive(String cuit, Boolean isActive);
 }

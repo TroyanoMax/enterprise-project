@@ -89,7 +89,7 @@ public class EmpresaController {
     })
     @PostMapping("/adherir")
     public ResponseEntity<EmpresaResponse> adherirEmpresa(
-            @Valid @RequestBody EmpresaDTO empresa) {
+            @RequestBody EmpresaDTO empresa) {
         log.info("Solicitud para adherir empresa con CUIT: {}", empresa.getCuit());
 
         try {
